@@ -67,9 +67,9 @@ class GameBoard extends React.Component {
         const isFilled = areAllBoxesClicked(this.state.squares)
 
         if (winner) {
-            status = `The winner is: ${winner}!`
+            status = `The winner is player ${winner}!`
             updateGameData.push(`Player '${winner}' Won`)
-
+            setTimeout(() => { alert(status) }, 0);
         } else if (!winner && isFilled) {
             status = 'Game drawn!'
             updateGameData.push(status)
@@ -86,7 +86,7 @@ class GameBoard extends React.Component {
     }
 
     render() {
-        const { gameStatus, squares, moveHistory } = this.state
+        const { gameStatus, moveHistory } = this.state
 
         return (
             <div className='game-board-wrapper'>
