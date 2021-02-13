@@ -1,9 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import * as actions from "../redux/actions/gameResult";
 import { connect } from "react-redux";
 import Box from '../components/BoardBox';
-import Scoreboard from './Scoreboard';
 import { findWinner, areAllBoxesClicked } from '../utils';
 import { Button } from 'react-bootstrap';
 
@@ -92,13 +90,11 @@ class GameBoard extends React.Component {
 
         return (
             <div className='game-board-wrapper'>
-                {/* Link to scoreboard */}
-                {/* <Link to="/" className="board-link">Go back to scoreboard</Link> */}
                 <div className="board-header">
                     <h4>Let's start game</h4>
                     <Button size='small' onClick={this.handleGameRestart}>Start new game</Button>
                 </div>
-                {/* The game board */}
+
                 <div className="board-wrapper">
                     <div className="board">
                         <h5 className="board-heading">{gameStatus}</h5>
@@ -140,8 +136,6 @@ class GameBoard extends React.Component {
                         </div>
                     </div>
                 </div>
-                {/* <hr />
-                <Scoreboard /> */}
             </div>
         )
     }
